@@ -21,29 +21,32 @@
 % Example use of the \illustration command
 \illustration{0.7}{image.jpg}{Photo by \href{https://www.istockphoto.com/photos/hiking-trail-aerial}{iStock}}
 
-A new trail running club is planning their weekly training plans. Each week, they plan a specific number of runs and have a set of available trail circuits. They hope to maximize the number of kilometres done each week, given that they can only run two segments per training session. They absolutely do not want to repeat a segment multiple times throughout the week; that would be so boring!
+A new trail running club is planning their weekly training plans. Each week, they have a specific number of runs planned and a circuit of trails available to them. They hope to \textbf{maximize total training load} each week, given that they can only run two segments per training session. They absolutely do not want to repeat a segment multiple times throughout the week; that would be so boring!
 
-The trail forms a linear sequence; each segment connects to the segment that follows. The circuit is also not circular, so the last segment does not connect to the first segment.
+A run on segments i and i+1 has a training load of 2aiai+1-|ai-ai+1|: two demanding segments score high, but a sharp jump in difficulty within one run costs points.
 
-Calculating the maximum number of kilometres that can be run each week is proving to be very time-consuming, since the circuits can get really big… Since they know you love this kind of puzzle, they have reached out to you to offer a program that will maximize the number of kilometres in a given week.
+The trail forms a linear sequence, where each segment connects to the segment that follows. The circuit is also not circular, so the last segment does not connect to the first segment.
 
-Given the lengths of the $N$ segments and the number of planned runs ($R$), you have to select exactly $R$ pairs of consecutive segments with no repeats, so that the total distance is as large as possible.
+Calculating the maximum total training load that can be accumulated each week is proving to be very time-consuming, since the circuits can get really big\dots Since they know you love this kind of puzzle, they have reached out to you to offer a program that will maximize the total training load in a given week.
+
+Given the difficulty ratings of the N segments and the number of planned runs R, you have to select exactly R pairs of consecutive segments with no repeating segments, so that the total training load is as large as possible.
 
 \section*{Input}
 
-The first line of the input consists of two integers, N and R: 
+The input consists of one test case. The first line of the input consists of two integers, N and R: 
 \begin{itemize}
-\item N (\(2 < N \leq $5\,000$\)),  the number of segments in the trail circuit for that week.
-\item R (\(1 < R \leq N/2\)), the number of runs planned for that week.
+\item N (2N5000), the number of segments in the trail circuit for that week.
+\item R ($1 \leq R \leq \lfloor N/2 \rfloor$), the number of runs planned for that week.
 \end{itemize}
 
-The second line of input consists of $N$ space-separated integers \(a_1, a_2, …. a_N\), where \(a_i\) represents the length of segment $i$ in kilometers. The segments are ordered by how they connect sequentially along the trail.
+The second line of input consists of N space-separated integers $a_1, a_2, \dots, a_N$ (0ai104), where ai represents the difficulty rating of segment i. The segments are ordered by how they connect sequentially along the trail.
 
 \section*{Output}
-A single integer representing the maximum number of kilometres the run club can complete that week, with exactly $R$ runs, with each run covering two consecutive segments and no segment used more than once.
+A single integer representing \textbf{the maximum total training load with exactly R runs}, with each run covering two consecutive segments and no segment used more than once.
 
-\section*{Sample Input 1	\tab Sample Output 1}
-7 2       \tab 51 \newline
+\section*{Sample Input 1    \tab Sample Output 1}
+7 2       \tab 639 \newline
 9 1 10 30 2 5 6 \newline
 
 \end{document}
+

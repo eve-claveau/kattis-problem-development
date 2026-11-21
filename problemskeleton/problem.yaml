@@ -1,0 +1,13 @@
+license: public domain
+uuid: 8f3b2c4e-9a1d-4e7b-b5c6-2d8f0a4e91c3
+
+type: pass-fail
+name: Training Runs
+author: Ève Claveau, Marwa Bouladjine, Pyper Woodman
+source: COMP-321 Problem Design
+
+validation: default
+
+limits:
+  memory: 2048
+  time-sec: 2
